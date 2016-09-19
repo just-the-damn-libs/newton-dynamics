@@ -1,0 +1,32 @@
+language: cpp
+
+addons:
+  apt:
+    packages:
+      - libwxgtk3.0-dev
+      - libtinyxml-dev
+      - libopenal-dev
+      - libglew-dev
+      - libfreetype6-dev
+
+matrix:
+  include:
+    - os: linux
+      sudo: required
+      dist: trusty
+      env: DEPLOY_FILE=./lib/libNewton.so
+      compiler: gcc
+      script: cmake ./CMakeLists.txt; make
+    - os: osx
+      env: DEPLOY_FILE=./lib/libNewton.so
+      compiler: gcc
+      script: cmake ./CMakeLists.txt; make
+
+deploy:
+  provider: releases
+  api_key:
+    secure: IATyMNX7SKTY+tLysdmZxf7vEhfAfpI2Bo75V49QqOBmSOE27twB7mB3rz18OE2mkG657i5FN6nKemQ3ceK/lySmZZXG80NDN35pTxTdmeSeJsZWkKeyNGyK5sXfST83gN4lC6gJnuCag+Yile2ZQTsahVPQN2e+FrVh9MXE5p4mM1lovq1zl36t1KI+D+jVDmHC4lEDKDfCrC7q3yypRU1bUNYErJ0jY6I728eCIby8cytGnYqI1121FcoG2Vn/Kna/ecDOkB3qAjk4W5hQzY+ZiL5Yceeh7H3SMu/aQi/Rd71ae2W4xjKWenvJHmBDHSJWRo7NNlc7IBgzbr9oZv4AE4oVuGsS6aR3YvEQQQbemIJQ2JeElWyTx+4F0iOUvdQASsoN+cTyMhC5jCuWF6eKMbbNYVi3fSywP4BbV3JZcV/Y6nq4skfi26t0+ya/TkHndZkFKujj3oESnAGeq1gfKSUXw8vuwEkK7OcIExDXCgVsWyYXNfSeTFlI2jarj0EDooviAsDBEOH3Apb9gcuGMgsEo4M7nT3O3awrxGwll+K6QwoyCu9tFyQ9KPK5XPCr7fLFs38Y4VwPLXs+I5eCSyjnmc8VvDjahNCQV4CZt1woRYTf24OiHlBiJwDQSPXCQXjbmk8dSj0CmeQ1K5taCiu2ZDpyFukCyGA/Aj8=
+  skip_cleanup: true
+  file: $DEPLOY_FILE
+  on:
+    tags: true
