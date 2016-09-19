@@ -4,6 +4,7 @@ addons:
   apt:
     packages:
       - libwxgtk3.0-dev
+      - libtinyxml-dev
 
 matrix:
   include:
