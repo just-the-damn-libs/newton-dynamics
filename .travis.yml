@@ -1,5 +1,10 @@
 language: cpp
 
+addons:
+  apt:
+    packages:
+      - libwxgtk3.0-dev
+
 matrix:
   include:
     - os: linux
@@ -7,7 +12,7 @@ matrix:
       dist: trusty
       env: DEPLOY_FILE=cimgui.so
       compiler: clang
-      script: sudo apt-get install wx-common; cmake ./CMakeLists.txt; make
+      script: cmake ./CMakeLists.txt; make
     - os: osx
       env: DEPLOY_FILE=cimgui.dylib
       compiler: clang
