@@ -1,0 +1,12 @@
+language: cpp
+
+matrix:
+  include:
+    - os: linux
+      env: DEPLOY_FILE=cimgui.so
+      compiler: clang
+      script: cmake ./CMakeLists.txt; make
+    - os: osx
+      env: DEPLOY_FILE=cimgui.dylib
+      compiler: clang
+      script: cmake ./CMakeLists.txt; make
