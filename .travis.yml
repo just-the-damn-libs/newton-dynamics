@@ -3,6 +3,8 @@ language: cpp
 matrix:
   include:
     - os: linux
+      sudo: required
+      dist: trusty
       env: DEPLOY_FILE=cimgui.so
       compiler: clang
       script: cmake ./CMakeLists.txt; make
