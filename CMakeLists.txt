@@ -57,6 +57,10 @@ if (MSVC)
   endif ()
 endif ()
 
+if (LINUX OR APPLE)
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -msse -msse3 -msse4 -mfpmath=sse")
+endif()
+
 # Specify build paths
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${NewtonSDK_BINARY_DIR}/lib")
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${NewtonSDK_BINARY_DIR}/lib")
