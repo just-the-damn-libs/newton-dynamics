@@ -75,3 +75,20 @@ packages/dCompilerKit/dLittleScriptLanguage/dLittleScriptParser.cpp.txt
 *.sbr
 *.res
 
+CMakeFiles/*
+Makefile
+applications/demosSandbox/CMakeFiles/*
+applications/demosSandbox/Makefile
+applications/demosSandbox/cmake_install.cmake
+applications/demosSandbox/demosSandbox
+cmake_install.cmake
+coreLibrary_300/CMakeFiles/*
+coreLibrary_300/Makefile
+coreLibrary_300/cmake_install.cmake
+lib/*
+packages/CMakeFiles/*
+packages/Makefile
+packages/cmake_install.cmake
+packages/thirdParty/CMakeFiles/*
+packages/thirdParty/Makefile
+packages/thirdParty/cmake_install.cmake

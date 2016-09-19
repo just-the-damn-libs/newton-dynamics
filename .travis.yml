@@ -15,9 +15,9 @@ matrix:
       sudo: required
       dist: trusty
       env: DEPLOY_FILE=cimgui.so
-      compiler: clang
+      compiler: gcc
       script: cmake ./CMakeLists.txt; make
     - os: osx
       env: DEPLOY_FILE=cimgui.dylib
-      compiler: clang
+      compiler: gcc
       script: cmake ./CMakeLists.txt; make
