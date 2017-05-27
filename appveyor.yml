@@ -12,3 +12,20 @@ platform:
     
 build:
     project: c:\projects\newton\coreLibrary_300/projects/windows/project_vs2015_dll/newton.vcxproj
+
+artifacts:
+  - path: .\coreLibrary_300\projects\windows\project_vs2015_dll\x64\newton\Release\newton.dll
+    name: theDLL
+    type: File
+
+deploy:
+  release: newton-v$(appveyor_build_version)-$(PLATFORM)
+  description: 'Appveyor Build'
+  provider: GitHub
+  auth_token:
+    secure: XSb9h9W4f7bSSB7IQ3m3wngD2WA/hS0mq/aEDynzsVGkETjkjgq8im67ByH7FDX3
+  artifact: theDLL
+  draft: false
+  prerelease: false
+  on:
+    branch: master
