@@ -14,7 +14,7 @@ build:
     project: c:\projects\newton\coreLibrary_300/projects/windows/project_vs2015_dll/newton.vcxproj
 
 after_build:
-  - xcopy .\coreLibrary_300\projects\windows\project_vs2015_dll\x64\newton\Release\newton.dll .\newton$(PLATFORM).dll
+  - copy .\coreLibrary_300\projects\windows\project_vs2015_dll\x64\newton\Release\newton.dll .\newton$(PLATFORM).dll
 
 artifacts:
   - path: .\newton$(PLATFORM).dll
