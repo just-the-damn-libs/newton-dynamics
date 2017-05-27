@@ -9,15 +9,13 @@ before_build:
 
 platform:
   - x64
+  - Win32  
     
 build:
     project: c:\projects\newton\coreLibrary_300/projects/windows/project_vs2015_dll/newton.vcxproj
 
-after_build:
-  - copy .\coreLibrary_300\projects\windows\project_vs2015_dll\x64\newton\Release\newton.dll .\newton$(PLATFORM).dll
-
 artifacts:
-  - path: .\newton$(PLATFORM).dll
+  - path: .\coreLibrary_300\projects\windows\project_vs2015_dll\$(PLATFORM)\newton\Release\newton.dll
     name: theDLL
     type: File
 
