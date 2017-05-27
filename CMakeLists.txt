@@ -85,7 +85,7 @@ else ()
 endif ()
 
 
-option("NEWTON_DEMOS_SANDBOX" "Build demos sandbox" ON)
+option("NEWTON_DEMOS_SANDBOX" "Build demos sandbox" OFF)
 
 
 add_subdirectory("${NewtonSDK_SOURCE_DIR}/packages")

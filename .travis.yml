@@ -1,14 +1,5 @@
 language: cpp
 
-addons:
-  apt:
-    packages:
-      - libwxgtk3.0-dev
-      - libtinyxml-dev
-      - libopenal-dev
-      - libglew-dev
-      - libfreetype6-dev
-
 matrix:
   include:
     - os: linux
